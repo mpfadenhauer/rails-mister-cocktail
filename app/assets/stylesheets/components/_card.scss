@@ -1,7 +1,17 @@
+.card {
+  height: 150px;
+  background-position: 35% 58%;
+  text-align: center;
+  vertical-align: center;
+  justify-content: center;
+  color: white;
+}
+
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
+
 }
 
 // Smallest device

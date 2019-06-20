@@ -1,25 +1,23 @@
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(200,101,80,0.6) 0%, rgba(13, 9, 16, 0.72)), url(<%= image_path "Mushroom2Cocktail.jpg" %>);">
-  <div class="banner-content">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.2)), url(<%= image_path "Mushroom2Cocktail.jpg" %>)">
+  <div class="banner-content text-center">
     <h1>Salty Tundra Bar</h1>
-    <p><%= link_to "Create new Cocktail", new_cocktail_path, class: "btn btn-flat-success"%></p>
+    <br>
+    <button class="btn btn-outline-light"><%= link_to "Create new Cocktail", new_cocktail_path%></button>
   </div>
 </div>
-
-
-<div class="main-overview">
- <h3>Our cocktails</h3>
- <div class="container-fluid">
-   <div class="row">
-     <% @cocktails.each do |cocktail| %>
-     <div class="col-xs-12 col-sm-6 col-md-4">
-        <div class="card">
-         <h2><%= link_to cocktail.name, cocktail_path(cocktail) %></h2>
-         <%= link_to "Delete me", cocktail_path(cocktail), method: :delete, data: {:confirm =>"Are you sure?"}  %>
-        </div>
-      </div>
+<div class="container text-center">
+  <h3>Our cocktails</h3>
+</div>
+<div class="container">
+<div class="row cards">
+ <% @cocktails.each do |cocktail| %>
+    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.2)),
+     url('<%= cl_image_path cocktail.photo, width: 300, height: 300, crop: :fill %>')">
+     <h2><%= link_to cocktail.name, cocktail_path(cocktail) %></h2>
     </div>
-    <% end %>
-   </div>
- </div>
+  <% end %>
+  <%= link_to "Delete me", cocktail_path(cocktail), method: :delete, data: {:confirm =>"Are you sure?"}  %>
+</div>
+</div>
 
 
