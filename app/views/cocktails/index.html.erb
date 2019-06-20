@@ -1,16 +1,25 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
-  <div class="container">
-    <h1><strong>Our Cocktail Menu</strong></h1>
-    <p> </p>
-    <%= link_to "Create new Cocktail", new_cocktail_path, class: "btn btn-flat-success"%>
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(200,101,80,0.6) 0%, rgba(13, 9, 16, 0.72)), url(<%= image_path "Mushroom2Cocktail.jpg" %>);">
+  <div class="banner-content">
+    <h1>Salty Tundra Bar</h1>
+    <p><%= link_to "Create new Cocktail", new_cocktail_path, class: "btn btn-flat-success"%></p>
   </div>
 </div>
 
 
-<ul>
-  <% @cocktails.each do |cocktail| %>
-  <li> <%= link_to cocktail.name, cocktail_path(cocktail) %> </li>
-  <% end %>
-</ul>
+<div class="main-overview">
+ <h3>Our cocktails</h3>
+ <div class="container-fluid">
+   <div class="row">
+     <% @cocktails.each do |cocktail| %>
+     <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="card">
+         <h2><%= link_to cocktail.name, cocktail_path(cocktail) %></h2>
+         <%= link_to "Delete me", cocktail_path(cocktail), method: :delete, data: {:confirm =>"Are you sure?"}  %>
+        </div>
+      </div>
+    </div>
+    <% end %>
+   </div>
+ </div>
 
 

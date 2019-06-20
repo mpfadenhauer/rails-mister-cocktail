@@ -1,22 +1,20 @@
-.flash {
-  padding: 16px 24px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: white;
-  box-shadow: 0 0 8px rgba(0,0,0,0.2);
-  border-radius: 4px;
-  margin: 8px;
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
 }
 
-.flash-success {
-  border: 2px solid #1EDD88;
+.banner h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+  font-weight: bold;
 }
 
-.flash-warning {
-  border: 2px solid #FFC65A;
-}
-
-.flash-danger {
-  border: 2px solid #FD1015;
+.banner p {
+  font-size: 20px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
