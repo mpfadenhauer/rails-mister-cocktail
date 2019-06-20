@@ -8,14 +8,13 @@
       <div>
         <h2><%= @cocktail.name %></h2>
         <% @cocktail.doses.each do |dose| %>
-        <p><%= dose.description %> of <%= dose.ingredient.name %></p>
-        <br>
-        <br>
-        <h2 class="card-trip-pricing"><%= link_to "Add", new_cocktail_dose_path(@cocktail) %></h2>
-        <h2 class="card-trip-pricing"><%= link_to "Remove", dose_path(dose), method: :delete, data: {confirm: "Are you sure?"} %><h2>
+          <p><%= dose.description %> of <%= dose.ingredient.name %> | <%= link_to "🗑", dose_path(dose), method: :delete, data: {confirm: "Are you sure?"} %></p>
         <%end%>
       </div>
-      <h2 class="card-trip-pricing"><%= link_to "Back to menu", cocktails_path  %></h2>
+      <div>
+        <h2 class="card-trip-pricing"><%= link_to "Add", new_cocktail_dose_path(@cocktail) %></h2>
+        <h2 class="card-trip-pricing"><%= link_to "Back to menu", cocktails_path  %></h2>
+      </div>
     </div>
   </div>
 </div>
